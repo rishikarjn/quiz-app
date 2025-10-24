@@ -4,8 +4,7 @@ import questions from './questions.json'
 const Questions = ({setIsOver,setScore}) => {
 
     const [currentIndex, setCurrentIndex] = useState(0)
-    const [score, setScore]=useState(0)
-     console.log(score)
+     
 
 
      const handleOptionClick =(selectedOption) =>{
@@ -13,8 +12,11 @@ const Questions = ({setIsOver,setScore}) => {
         {
             setScore(prev => prev+1);
         }
-        if(currentIndex + 1 < questions.length){
+        if(currentIndex  < questions.length - 1){
            setCurrentIndex(prev=>prev+1); 
+        }
+        else{
+          setIsOver(true);
         }
         
                    
